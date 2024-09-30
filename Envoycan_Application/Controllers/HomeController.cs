@@ -1,9 +1,11 @@
 using Envoycan_Application.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace Envoycan_Application.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -12,12 +14,12 @@ namespace Envoycan_Application.Controllers
         {
             _logger = logger;
         }
-
+        [Authorize(Roles = "Admin , User")]
         public IActionResult Index()
         {
             return View();
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult Privacy()
         {
             return View();

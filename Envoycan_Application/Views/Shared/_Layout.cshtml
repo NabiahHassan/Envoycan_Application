@@ -18,22 +18,83 @@
         <navbar>
             <div class="tw-h-[146px]">
                 <div class="tw-h-[100px] tw-flex tw-justify-center">
+
                     <div class="tw-h-[100%] tw-w-[90%] tw-flex tw-justify-between tw-items-center border-bottom border-[#101010] border-2">
-                        <img src="/Images/Logo.png">
-                        <div class="">
-                            <ul class="tw-list-none d-flex gap-4 ">
-                                <li class="tw-py-3 tw-flex tw-items-center  gap-3 tw-w-[155px] tw-justify-center">
-                                    <img src="/Images/Vector.png">
-                                    <a href="" class="tw-no-underline text-black">My Booking</a>
-                                </li>
-                                <li class="tw-py-3 tw-flex tw-bg-[#A7E92F] tw-rounded-[4px] tw-w-[164px] tw-justify-center tw-bg-">
-                                    <a asp-controller="Registration" asp-action="Index" type="button" id="btnModalPopup" class="tw-no-underline text-white tw-font-bold">Login/Register</a>
-                                </li>
-                                <li class=" tw-flex tw-justify-center tw-py-3 tw-w-[124px] border border-black border-2 tw-rounded-[4px] 	">
-                                    <a href="" class="tw-no-underline text-black tw-font-bold">Join Now</a>
-                                </li>
-                            </ul>
-                        </div>
+                            <img src="/Images/Logo.png">
+                       @*  @if (@User.Identity.Name != null)
+                        {
+                            <div class=" tw-flex tw-justify-between tw-items-center">
+
+                                <ul class="tw-list-none d-flex gap-4 tw-items-center">
+                                    <div class="tw-w-[28%]">
+                                        <p>Welcome</p>
+                                        <h4>@User.Identity.Name </h4>
+                                        </div>
+                                    <li class="tw-py-3 tw-flex tw-items-center  gap-3 tw-w-[155px] tw-justify-center">
+                                        <img src="/Images/Vector.png">
+                                        <a href="" class="tw-no-underline text-black">My Booking</a>
+                                    </li>
+                                    <li class="tw-py-3 tw-flex tw-bg-[#A7E92F] tw-rounded-[4px] tw-w-[100px] tw-justify-center">
+                                        <form asp-controller="Registration" asp-action="LogOut" method="post">
+                                            <button type="submit" class="tw-no-underline text-white tw-font-bold tw-bg-transparent tw-border-none">Logout</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                         
+                        }
+                        else
+                        {
+                            <div class="">
+                                <ul class="tw-list-none d-flex gap-4 ">
+                                   
+                                    <li class="tw-py-3 tw-flex tw-bg-[#A7E92F] tw-rounded-[4px] tw-w-[164px] tw-justify-center tw-bg-">
+                                        <a asp-controller="Registration" asp-action="Index" type="button" id="btnModalPopup" class="tw-no-underline text-white tw-font-bold">Login/Register</a>
+                                    </li>
+                                    <li class=" tw-flex tw-justify-center tw-py-3 tw-w-[124px] border border-black border-2 tw-rounded-[4px] 	">
+                                        <a asp-controller="Registration" asp-action="SignIn" class="tw-no-underline text-black tw-font-bold">Join Now</a>
+                                    </li>
+                                    <li class="tw-py-3 tw-flex tw-bg-[#A7E92F] tw-rounded-[4px] tw-w-[164px] tw-justify-center tw-bg-">
+                                        <a asp-controller="Registration" asp-action="ExportToCsv" type="button" id="btnModalPopup" class="tw-no-underline text-white tw-font-bold">Export Users to CSV</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        }
+                       *@
+                       @if (@User.Identity.Name != null)
+                        {
+                            <div class=" tw-flex tw-justify-between tw-items-center">
+
+                                <ul class="tw-list-none d-flex gap-4 tw-items-center">
+                                    <div class="tw-w-[16%]">
+                                        <p>Welcome</p>
+                                        <h4>@User.Identity.Name </h4>
+                                        </div>
+                                    <li class="tw-py-3 tw-flex tw-items-center  gap-3 tw-w-[155px] tw-justify-center">
+                                        <img src="/Images/Vector.png">
+                                        <a href="" class="tw-no-underline text-black">My Booking</a>
+                                    </li>
+                                    <li class="tw-py-3 tw-flex tw-bg-[#A7E92F] tw-rounded-[4px] tw-w-[100px] tw-justify-center">
+                                        <form asp-controller="Registration" asp-action="LogOut" method="post">
+                                            <button type="submit" class="tw-no-underline text-white tw-font-bold tw-bg-transparent tw-border-none">Logout</button>
+                                        </form>
+                                    </li>
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <li class="tw-py-3 tw-flex tw-bg-[#A7E92F] tw-rounded-[4px] tw-w-[164px] tw-justify-center">
+                                            <a asp-controller="Registration" asp-action="ExportToCsv" type="button" id="btnModalPopup" class="tw-no-underline text-white tw-font-bold">Export Users to CSV</a>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                            @* <div class="">
+                                <ul class="tw-list-none d-flex gap-4 ">
+                                    <li class="tw-py-3 tw-flex tw-bg-[#A7E92F] tw-rounded-[4px] tw-w-[164px] tw-justify-center tw-bg-">
+                                        <a asp-controller="Registration" asp-action="ExportToCsv" type="button" id="btnModalPopup" class="tw-no-underline text-white tw-font-bold">Export Users to CSV</a>
+                                    </li>
+                                </ul>
+                            </div> *@
+                        }
                     </div>
                 </div>
                 <div class="tw-h-[46px] tw-flex tw-justify-center ">
@@ -116,6 +177,7 @@
                 </div>
             </div>
         </navbar>
+        
     </header>
     <div class="">
         <main role="main" class="">
