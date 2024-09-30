@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Envoycan_Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+ @*    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Envoycan_Application.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <header>
+        <navbar>
+            <div class="tw-h-[146px]">
+                <div class="tw-h-[100px] tw-flex tw-justify-center">
+                    <div class="tw-h-[100%] tw-w-[90%] tw-flex tw-justify-between tw-items-center border-bottom border-[#101010] border-2">
+                        <img src="/Images/Logo.png">
+                        <div class="">
+                            <ul class="tw-list-none d-flex gap-4 ">
+                                <li class="tw-py-3 tw-flex tw-items-center  gap-3 tw-w-[155px] tw-justify-center">
+                                    <img src="/Images/Vector.png">
+                                    <a href="" class="tw-no-underline text-black">My Booking</a>
+                                </li>
+                                <li class="tw-py-3 tw-flex tw-bg-[#A7E92F] tw-rounded-[4px] tw-w-[164px] tw-justify-center tw-bg-">
+                                    <a asp-controller="Registration" asp-action="Index" type="button" id="btnModalPopup" class="tw-no-underline text-white tw-font-bold">Login/Register</a>
+                                </li>
+                                <li class=" tw-flex tw-justify-center tw-py-3 tw-w-[124px] border border-black border-2 tw-rounded-[4px] 	">
+                                    <a href="" class="tw-no-underline text-black tw-font-bold">Join Now</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tw-h-[46px] tw-flex tw-justify-center ">
+                    <div class="tw-w-[90%] tw-content-center ">
+                        <ul class="d-flex tw-list-none tw-justify-between ">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">Ac Repair</a>
+                                <ul class="dropdown-menu border border-0">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">Carpenter</a>
+                                <ul class="dropdown-menu border border-0">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">House Cleaning</a>
+                                <ul class="dropdown-menu border border-0">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">Painter</a>
+                                <ul class="dropdown-menu border border-0">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">Pest Control</a>
+                                <ul class="dropdown-menu border border-0">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">Plumber</a>
+                                <ul class="dropdown-menu border border-0">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">Salon </a>
+                                <ul class="dropdown-menu border border-0">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">Smart Home</a>
+                                <ul class="dropdown-menu border border-0">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+                                <ul class="dropdown-menu border border-0">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </navbar>
+    </header>
+    <div class="">
+        <main role="main" class="">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="tw-bg-black pt-5">
+        <div class="tw-w-[90%] tw-m-auto ">
+            <div class=" d-grid tw-grid-cols-13 gap-2 pb-5 footer-border ">
+                <div class="tw-col-start-1 tw-col-end-3 ">
+                    <h2 class="tw-text-white mb-3">Handyman Services</h2>
+                    <ul class="tw-list-none">
+                        <li class="hover:tw-text-white tw-text-[#6C757D] tw-leading-10 tw-text-[15px] tw-w-[max-content] hover:tw-cursor-pointer">House Cleaning</li>
+                        <li class="hover:tw-text-white tw-text-[#6C757D] tw-leading-10 tw-text-[15px] tw-w-[max-content] hover:tw-cursor-pointer">Appliances Repair</li>
+                        <li class="hover:tw-text-white tw-text-[#6C757D] tw-leading-10 tw-text-[15px] tw-w-[max-content] hover:tw-cursor-pointer">Furniture Assembly</li>
+                        <li class="hover:tw-text-white tw-text-[#6C757D] tw-leading-10 tw-text-[15px] tw-w-[max-content] hover:tw-cursor-pointer">AC Service & Repair</li>
+                        <li class="hover:tw-text-white tw-text-[#6C757D] tw-leading-10 tw-text-[15px] tw-w-[max-content] hover:tw-cursor-pointer">Salon For Women</li>
+                        <li class="hover:tw-text-white tw-text-[#6C757D] tw-leading-10 tw-text-[15px] tw-w-[max-content] hover:tw-cursor-pointer">Smart Home</li>
+                        <li class="hover:tw-text-white tw-text-[#6C757D] tw-leading-10 tw-text-[15px] tw-w-[max-content] hover:tw-cursor-pointer">Pest Control</li>
+                        <li class="hover:tw-text-white tw-text-[#6C757D] tw-leading-10 tw-text-[15px] tw-w-[max-content] hover:tw-cursor-pointer">Carpenter</li>
+                        <li class="hover:tw-text-white tw-text-[#6C757D] tw-leading-10 tw-text-[15px] tw-w-[max-content] hover:tw-cursor-pointer">Electrician</li>
+                        <li class="hover:tw-text-white tw-text-[#6C757D] tw-leading-10 tw-text-[15px] tw-w-[max-content] hover:tw-cursor-pointer">Handyman</li>
+                        <li class="hover:tw-text-white tw-text-[#6C757D] tw-leading-10 tw-text-[15px] tw-w-[max-content] hover:tw-cursor-pointer">Plumber</li>
+                    </ul>
+                </div>
+                <div class="tw-col-start-3 tw-col-end-5">
+                    <h2 class="tw-text-white mb-3">Why choose Handyman</h2>
+                    <ul class="tw-list-none">
+                        <li class="hover:tw-text-white tw-text-[#6C757D] tw-leading-10 tw-text-[15px] tw-w-[max-content] hover:tw-cursor-pointer">
+                            <i class="fa-solid fa-chevron-right  tw-text-[12px] tw-pr-[9px]"></i>About us
+                        </li>
+                        <li class="hover:tw-text-white tw-text-[#6C757D] tw-leading-10 tw-text-[15px] tw-w-[max-content] hover:tw-cursor-pointer">
+                            <i class="fa-solid fa-chevron-right  tw-text-[12px] tw-pr-[9px]"></i>Privacy
+                        </li>
+                        <li class="hover:tw-text-white tw-text-[#6C757D] tw-leading-10 tw-text-[15px] tw-w-[max-content] hover:tw-cursor-pointer">
+                            <i class="fa-solid fa-chevron-right  tw-text-[12px] tw-pr-[9px]"></i>Terms & Condition
+                        </li>
+                        <li class="hover:tw-text-white tw-text-[#6C757D] tw-leading-10 tw-text-[15px] tw-w-[max-content] hover:tw-cursor-pointer">
+                            <i class="fa-solid fa-chevron-right  tw-text-[12px] tw-pr-[9px]"></i>Careers
+                        </li>
+                        <li class="hover:tw-text-white tw-text-[#6C757D] tw-leading-10 tw-text-[15px] tw-w-[max-content] hover:tw-cursor-pointer">
+                            <i class="fa-solid fa-chevron-right  tw-text-[12px] tw-pr-[9px]"></i>Team
+                        </li>
+                    </ul>
+                </div>
+                <div class="tw-col-start-5 tw-col-end-10 ">
+                    <h2 class="tw-text-white mb-3">Support</h2>
+                    <ul class="tw-list-none">
+                        <li class="hover:tw-text-white tw-text-[#6C757D] tw-leading-10 tw-text-[15px] tw-w-[max-content] hover:tw-cursor-pointer">
+                            <i class="fa-solid fa-chevron-right  tw-text-[12px] tw-pr-[9px]"></i>Contact us
+                        </li>
+                        <li class="hover:tw-text-white tw-text-[#6C757D] tw-leading-10 tw-text-[15px] tw-w-[max-content] hover:tw-cursor-pointer">
+                            <i class="fa-solid fa-chevron-right  tw-text-[12px] tw-pr-[9px]"></i>Trust & Safety
+                        </li>
+                        <li class="hover:tw-text-white tw-text-[#6C757D] tw-leading-10 tw-text-[15px] tw-w-[max-content] hover:tw-cursor-pointer">
+                            <i class="fa-solid fa-chevron-right  tw-text-[12px] tw-pr-[9px]"></i>How it works
+                        </li>
+                        <li class="hover:tw-text-white tw-text-[#6C757D] tw-leading-10 tw-text-[15px] tw-w-[max-content] hover:tw-cursor-pointer">
+                            <i class="fa-solid fa-chevron-right  tw-text-[12px] tw-pr-[9px]"></i>customer care
+                        </li>
+                        <li class="hover:tw-text-white tw-text-[#6C757D] tw-leading-10 tw-text-[15px] tw-w-[max-content] hover:tw-cursor-pointer">
+                            <i class="fa-solid fa-chevron-right  tw-text-[12px] tw-pr-[9px]"></i>customer care
+                        </li>
+                    </ul>
+                </div>
+                <div class="tw-col-start-10 tw-col-end-13 ">
+                    <img src="\Images\Footer_logo.png" alt="">
+                    <div class="d-grid tw-gap-y-8">
+                        <div>
+                            <p class="tw-text-[#6C757D] tw-pt-[20px] tw-text-[14px]">
+                                Lorem ipsum dolor sit amet,<br> consectetuer
+                                adipiscing
+                                elit, sed<br>diam nonummy nibh euismod <br> tincidunt ut laoreet.
+                            </p>
+                        </div>
+                        <div class="help-line ">
+                            <h3 class="tw-text-white mb-2">Helpline Number</h3>
+                            <p class="tw-text-[#6C757D] tw-text-[22px]">+144 1234 56789</p>
+                        </div>
+                        <div class="download">
+                            <h5 class="tw-text-white mb-2">Download Application From</h5>
+                            <p class="tw-text-[#6C757D] tw-text-[14px]">
+                                Amet minim mollit non deserunt<br> ullamco est sit aliqua dolor
+                                do
+                                amet<br> sint.
+                            </p>
+                        </div>
+                        <div class="tw-w-[45%] d-grid tw-gap-y-2">
+                            <img src="\Images\Badge.png" alt="" class="tw-w-[70%]">
+                            <img src="\Images\Iphone.png" alt="" class="tw-w-[70%]">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=" d-flex tw-justify-between p-5 tw-items-center footer-border pb-5 ">
+                <div class="d-flex gap-3 ">
+                    <img src="\Images\footer_fb.png" alt="" class="tw-w-[20px]">
+                    <img src="\Images\footer_twitter.png" alt="" class="tw-w-[20px]">
+                    <img src="\Images\footer_linkedin.png" alt="" class="tw-w-[20px]">
+                    <img src="\Images\footer_insta.png" alt="" class="tw-w-[20px]">
+                    <img src="\Images\footer_youtube.png" alt="" class="tw-w-[20px]">
+                </div>
+                <div class="d-flex tw-justify-between gap-5">
+                    <div>
+                        <p class="tw-font-bold tw-text-white">Career</p>
+                        <p class="tw-text-[#6C757D]">Jobs@handyman.com</p>
+                    </div>
+                    <div>
+                        <p class="tw-text-[#212426] tw-pt-[2px] tw-font-extrabold tw-text-[25px] "> |</p>
+                    </div>
+                    <div class="">
+                        <p class="tw-font-bold tw-text-white">Business Inquires</p>
+                        <p class="tw-text-[#6C757D]">Inquires@handyman.com</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div>
+                <p class="p-4 tw-text-center tw-text-white tw-text-[14px]">© 2021 All Rights Reserved by Enovoycan</p>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js" integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        tailwind.config = {
+            prefix: "tw-",
+            corePlugins: {
+                preflight: false,
+            }
+        }
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

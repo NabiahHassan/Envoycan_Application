@@ -1,0 +1,79 @@
+﻿@model Envoycan_Application.Models.UserRegistration_Model
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="overlay" id="modalOverlay">
+    <div class="blurred-background"></div>
+    <div class="container modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <div class="tw-px-10 tw-py-4 modal-content">
+            <div class="d-flex tw-justify-between tw-items-center">
+                <h1 class="tw-text-[#A7E92F] tw-font-extrabold">Welcome</h1>
+                <p class="tw-text-[#A7E92F]">Sign In</p>
+            </div>
+            <p class="tw-text-[#A7E92F]">Register new Account</p>
+            <hr />
+            <div class="row tw-items-center">
+                <div class="col-md-6">
+                    <form name="Form" method="post" action="/Registration/Index">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group mb-2">
+                            <label asp-for="UserFirstName" class="control-label">First Name</label>
+                            <input asp-for="UserFirstName" class="form-control" />
+                            <span asp-validation-for="UserFirstName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label asp-for="UserLastName" class="control-label">Last Name</label>
+                            <input asp-for="UserLastName" class="form-control" />
+                            <span asp-validation-for="UserLastName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label asp-for="Password" class="control-label">Password</label>
+                            <input asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label asp-for="Email" class="control-label">Email</label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label asp-for="Phone" class="control-label">Phone</label>
+                            <input asp-for="Phone" class="form-control" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+                    </form>
+                        <input id="createBtn" type="submit" value="Create" class="btn main-color w-100" />
+                </div>
+                <div class="col-md-6 ">
+                    <img src="\Images\set_your_group.png" alt="" class="tw-w-[100%]">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+@section Scripts {
+                    @{
+                        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+                    }
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnModalPopup").on("click", function (e) {
+                e.preventDefault();
+                $("#modalOverlay").fadeIn(); 
+            });
+            $("#closeModal").on("click", function () {
+                $("#modalOverlay").fadeOut();
+            });
+
+            // $("#btn").click(function () {
+            //     document.Form.reset();
+            //     console.log("Form reset working");
+            // });
+        });
+    </script>
+                }
+
