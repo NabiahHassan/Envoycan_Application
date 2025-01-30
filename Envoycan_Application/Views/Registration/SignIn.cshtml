@@ -1,0 +1,84 @@
+﻿@model Envoycan_Application.Models.UserRegistration_Model
+@{
+    ViewData["Title"] = "SignIn";
+}
+@{
+    Layout = "~/Views/Shared/_MinimalLayout.cshtml";
+}
+<div class="relative h-screen">
+    <div class="absolute inset-0 flex items-center justify-center">
+<div class="overlay" id="modalOverlay">
+    <div class="blurred-background"></div>
+    <div class="container modal-content">
+        @* <span class="close" id="closeModal">&times;</span> *@
+        <div class="tw-px-10 tw-py-4 modal-content  border border-2">
+            <div class="d-flex tw-justify-between tw-items-center">
+                <h1 class="tw-text-[#A7E92F] tw-font-extrabold">Login</h1>
+                <ul>
+                    <li class="tw-py-3 tw-flex tw-bg-[#A7E92F] tw-rounded-[4px] tw-w-[100px] tw-justify-center tw-bg-">
+                        <a asp-controller="Registration" asp-action="Index" type="button" id="btnModalPopup" class="tw-no-underline text-white tw-font-bold">SignUp</a>
+                    </li>
+                </ul>
+            </div>
+            
+            @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"] as string))
+            {
+                <div class="alert alert-danger">
+                    @ViewData["ErrorMessage"]
+                </div>
+            }
+
+            <div class="row tw-items-center  ">
+                <div class="col-md-12">
+                  
+
+                    <form name="Form" method="post" action="SignIn">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group mb-2">
+                            <label asp-for="Email" class="control-label">Email</label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group mb-2">
+                            <label asp-for="Password" class="control-label">Password</label>
+                            <input asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                     
+                        <input id="createBtn" type="submit" value="Login" class="btn main-color w-100" />
+                    </form>
+
+                </div>
+             
+            </div>
+        </div>
+    </div>
+
+</div>
+  </div>
+  </div
+@* @section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnModalPopup").on("click", function (e) {
+
+                e.preventDefault();
+                console.log("Working")
+                $("#modalOverlay").fadeIn();
+            });
+            $("#closeModal").on("click", function () {
+                console.log("Working")
+                $("#modalOverlay").fadeOut();
+            });
+
+            $("#btn").click(function () {
+                document.Form.reset();
+                console.log("Form reset working");
+            });
+        });
+    </script>
+}
+ *@

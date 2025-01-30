@@ -16,14 +16,17 @@ namespace Envoycan_Application.Models
         [Required(ErrorMessage = "Please Enter Password")]
         [DataType(DataType.Password)]
 
-        public string Password { get; set; }
+        public string? Password { get; set; }
         [Required(ErrorMessage = "Please Enter Email")]
         [Display(Name = "Email")]
-        public string Email { get; set; }
+        public string? Email { get; set; }
         [Required(ErrorMessage ="Please Enter Phone")]
         [DataType (DataType.PhoneNumber)]
         [Display(Name ="Phone Number")]
         public string Phone{ get; set; }
+        [Required(ErrorMessage = "Please Enter User Role")]
+        [Display(Name = "User Role")]
+        public string Roles { get; set; }
 
     }
 }
