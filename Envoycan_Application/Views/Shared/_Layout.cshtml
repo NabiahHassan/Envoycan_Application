@@ -21,46 +21,7 @@
 
                     <div class="tw-h-[100%] tw-w-[90%] tw-flex tw-justify-between tw-items-center border-bottom border-[#101010] border-2">
                             <img src="/Images/Logo.png">
-                       @*  @if (@User.Identity.Name != null)
-                        {
-                            <div class=" tw-flex tw-justify-between tw-items-center">
-
-                                <ul class="tw-list-none d-flex gap-4 tw-items-center">
-                                    <div class="tw-w-[28%]">
-                                        <p>Welcome</p>
-                                        <h4>@User.Identity.Name </h4>
-                                        </div>
-                                    <li class="tw-py-3 tw-flex tw-items-center  gap-3 tw-w-[155px] tw-justify-center">
-                                        <img src="/Images/Vector.png">
-                                        <a href="" class="tw-no-underline text-black">My Booking</a>
-                                    </li>
-                                    <li class="tw-py-3 tw-flex tw-bg-[#A7E92F] tw-rounded-[4px] tw-w-[100px] tw-justify-center">
-                                        <form asp-controller="Registration" asp-action="LogOut" method="post">
-                                            <button type="submit" class="tw-no-underline text-white tw-font-bold tw-bg-transparent tw-border-none">Logout</button>
-                                        </form>
-                                    </li>
-                                </ul>
-                            </div>
-                         
-                        }
-                        else
-                        {
-                            <div class="">
-                                <ul class="tw-list-none d-flex gap-4 ">
-                                   
-                                    <li class="tw-py-3 tw-flex tw-bg-[#A7E92F] tw-rounded-[4px] tw-w-[164px] tw-justify-center tw-bg-">
-                                        <a asp-controller="Registration" asp-action="Index" type="button" id="btnModalPopup" class="tw-no-underline text-white tw-font-bold">Login/Register</a>
-                                    </li>
-                                    <li class=" tw-flex tw-justify-center tw-py-3 tw-w-[124px] border border-black border-2 tw-rounded-[4px] 	">
-                                        <a asp-controller="Registration" asp-action="SignIn" class="tw-no-underline text-black tw-font-bold">Join Now</a>
-                                    </li>
-                                    <li class="tw-py-3 tw-flex tw-bg-[#A7E92F] tw-rounded-[4px] tw-w-[164px] tw-justify-center tw-bg-">
-                                        <a asp-controller="Registration" asp-action="ExportToCsv" type="button" id="btnModalPopup" class="tw-no-underline text-white tw-font-bold">Export Users to CSV</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        }
-                       *@
+                    
                        @if (@User.Identity.Name != null)
                         {
                             <div class=" tw-flex tw-justify-between tw-items-center">
@@ -87,13 +48,6 @@
                                     }
                                 </ul>
                             </div>
-                            @* <div class="">
-                                <ul class="tw-list-none d-flex gap-4 ">
-                                    <li class="tw-py-3 tw-flex tw-bg-[#A7E92F] tw-rounded-[4px] tw-w-[164px] tw-justify-center tw-bg-">
-                                        <a asp-controller="Registration" asp-action="ExportToCsv" type="button" id="btnModalPopup" class="tw-no-underline text-white tw-font-bold">Export Users to CSV</a>
-                                    </li>
-                                </ul>
-                            </div> *@
                         }
                     </div>
                 </div>
@@ -101,75 +55,67 @@
                     <div class="tw-w-[90%] tw-content-center ">
                         <ul class="d-flex tw-list-none tw-justify-between ">
                             <li class="dropdown">
-                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">Ac Repair</a>
-                                <ul class="dropdown-menu border border-0">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    AC Repair
+                                </a>
+                            <ul id="acRepairDropdownMenu" class="dropdown-menu border border-0">
+                                     <li><a class="dropdown-item" href="#"></a></li> 
+                                 </ul>  
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Carpenter
+                                </a>
+                                <ul id="CarpenterDropdownMenu" class="dropdown-menu border border-0">
+                                    <li><a class="dropdown-item" href="#">-- Select a Service --</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">Carpenter</a>
-                                <ul class="dropdown-menu border border-0">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    HouseCleaning
+                                </a>
+                                <ul id="HouseCleaningDropdownMenu" class="dropdown-menu border border-0">
+                                    <li><a class="dropdown-item" href="#">-- Select a Service --</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">House Cleaning</a>
-                                <ul class="dropdown-menu border border-0">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Painter
+                                </a>
+                                <ul id="PainterDropdownMenu" class="dropdown-menu border border-0">
+                                    <li><a class="dropdown-item" href="#">-- Select a Service --</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">Painter</a>
-                                <ul class="dropdown-menu border border-0">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Pest Control
+                                </a>
+                                <ul id="PestControlDropdownMenu" class="dropdown-menu border border-0">
+                                    <li><a class="dropdown-item" href="#">-- Select a Service --</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">Pest Control</a>
-                                <ul class="dropdown-menu border border-0">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Plumber
+                                </a>
+                                <ul id="PlumberDropdownMenu" class="dropdown-menu border border-0">
+                                    <li><a class="dropdown-item" href="#">-- Select a Service --</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">Plumber</a>
-                                <ul class="dropdown-menu border border-0">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Salon
+                                </a>
+                                <ul id="SalonDropdownMenu" class="dropdown-menu border border-0">
+                                    <li><a class="dropdown-item" href="#">-- Select a Service --</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">Salon </a>
-                                <ul class="dropdown-menu border border-0">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">Smart Home</a>
-                                <ul class="dropdown-menu border border-0">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
-                                <ul class="dropdown-menu border border-0">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <a class="dropdown-toggle-navbar text-black tw-no-underline" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Smart Home
+                                </a>
+                                <ul id="SmartHomeDropdownMenu" class="dropdown-menu border border-0">
+                                    <li><a class="dropdown-item" href="#">-- Select a Service --</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -322,6 +268,41 @@
             }
         }
     </script>
+
+  <script>
+        $(document).ready(function () {
+            const serviceEndpoints = [
+                { url: '/Service/GetACRepairOptions', dropdownId: '#acRepairDropdownMenu', defaultText: '', nameKey: 'acRepairName' },
+                { url: '/Service/GetCarpenterOptions', dropdownId: '#CarpenterDropdownMenu', defaultText: '', nameKey: 'carpenterServiceName' },
+                { url: '/Service/GetHouseCleaningOptions', dropdownId: '#HouseCleaningDropdownMenu', defaultText: '', nameKey: 'houseCleaningName' },
+                { url: '/Service/GetPainterOptions', dropdownId: '#PainterDropdownMenu', defaultText: '', nameKey: 'painterName' },
+                { url: '/Service/GetPestControlOptions', dropdownId: '#PestControlDropdownMenu', defaultText: '', nameKey: 'pestControlName' },
+                { url: '/Service/GetPlumberOptions', dropdownId: '#PlumberDropdownMenu', defaultText: '', nameKey: 'plumberName' },
+                { url: '/Service/GetSalonOptions', dropdownId: '#SalonDropdownMenu', defaultText: '', nameKey: 'salonName' },
+                { url: '/Service/GetSmartHomeOptions', dropdownId: '#SmartHomeDropdownMenu', defaultText: '', nameKey: 'smartHomeName' }
+            ];
+
+            serviceEndpoints.forEach(service => {
+                $.ajax({
+                    url: service.url,
+                    method: 'GET',
+                    success: function (data) {
+                        if (data) {
+                            const dropdownMenu = $(service.dropdownId);
+                            dropdownMenu.empty().append(`<li><a class="dropdown-item" href="#">${service.defaultText}</a></li>`);
+                            $.each(data, function (index, option) {
+                                dropdownMenu.append(`<li><a class="dropdown-item" href="#">${option[service.nameKey]}</a></li>`);
+                            });
+                        }
+                    },
+                    error: function () {
+                        alert(`Error loading options for ${service.defaultText}`);
+                    }
+                });
+            });
+        });
+
+    </script> 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 

@@ -2,18 +2,20 @@ using Envoycan_Application.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-
 namespace Envoycan_Application.Controllers
 {
     [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
+        
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+         
         }
+       
+       
         [Authorize(Roles = "Admin , User")]
         public IActionResult Index()
         {
@@ -24,6 +26,7 @@ namespace Envoycan_Application.Controllers
         {
             return View();
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
